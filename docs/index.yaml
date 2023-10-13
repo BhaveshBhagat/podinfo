@@ -13,7 +13,7 @@ entries:
       name: stefanprodan
     name: podinfo
     sources:
-    - https://github.com/BhaveshBhagat/podinfo
+    - https://github.com/BhaveshBhagat/podinfo/tree/master/docs
     urls:
     - https://github.com/BhaveshBhagat/podinfo/tree/master/docs/podinfo-6.5.1.tgz
     version: 6.5.1
