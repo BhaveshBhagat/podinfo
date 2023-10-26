@@ -1,0 +1,34 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: imgautomate
+  namespace: flux-system
+spec:
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: poddemo
+  git:
+    checkout:
+      ref:
+        branch: master
+    commit:
+      author:
+        email: bhaveshbhagat724@gmail.com
+        name: BhaveshBhagat
+      messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
+    push:
+      branch: master
+  update:
+    path: ./kustomize
+    strategy: Setters
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bittoken
+  namespace: flux-system
+type: Opaque
+data:
+  username: YmJoYWdhdA== 
+  password: QVRCQnZMdmN1SnBxaldFQTNZcVIzeDl3dHFobTJENDBBN0NF
