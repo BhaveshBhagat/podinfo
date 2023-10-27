@@ -17,6 +17,9 @@ spec:
         email: bhaveshbhagat724@gmail.com
         name: BhaveshBhagat
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
+      signingKey:
+       secretRef:
+         name: gittoken 
     push:
       branch: master
   update:
@@ -26,9 +29,37 @@ spec:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: bittoken
+  name: gittoken
   namespace: flux-system
-type: Opaque
-data:
-  username: YmJoYWdhdA== 
-  password: QVRCQnZMdmN1SnBxaldFQTNZcVIzeDl3dHFobTJENDBBN0NF
+stringData:
+  git.asc: |
+    -----BEGIN PGP PUBLIC KEY BLOCK-----
+
+    mQENBGU6bhEBCAC0r/a5o46u1FPaqcYneV2diqzBujulQiDR3yWyI33AV2bQCYAs
+    ujlAAgraL94VUWTqsQisLDrpknwtW4bkITL9qIu6NkABeEy5sFP0g7fF2UmuAHv2
+    ZyyBXfo78axzqaqPn2Olm+NIG7g0FDYyUqdFhJY2ZYlw8HfukZEpWSDsQW/JLk8H
+    sfLHVnELppJ+ulhDZ864ncaWyLBVd9xx5t3qWBixjIcfU9lwZmP0gXWrvATV/M4T
+    lBDaPabzVWhwztklE6McHqpDGzM7/msBSKjauOR1swRn1TvrLSfG19X1tI03uiGW
+    aMcj6DY8k9vGJooXunD3z8y+0iRQebrMjy/vABEBAAG0LEJoYXZlc2ggKGhlbGxv
+    KSA8YmhhdmVzaGJoYWdhdDcyNEBnbWFpbC5jb20+iQFOBBMBCAA4FiEEMV4d3kex
+    pPnFGHOGZdxtoGSfkCAFAmU6bhECGwMFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AA
+    CgkQZdxtoGSfkCDWkgf/dXZKnSfWOPVxPXUufQs5ncXOqcQx3FoblIPGgfUcxKmz
+    17aVS1wT5tlubxQfQUSfRRAIPVOjLjxGTCtEsH+QICQ5CAPtb57eUfZp36iFeJqW
+    OOps6x/0UFRAgGTmmiZndQrPzcJiLJ82e8SKDHrCr0jUz4gzJSQYLjvxwhb+UX8F
+    SKwEweWOg4fFK8QjdXx1V2E3IpCo6MQbX3htpaFuIkyq8LHiTGu9FxwI8WraGsbT
+    ht/o8YmJ8XYFop0Qf8Z5aYWxqjE6fHJPDFil/XraUIUNuBy3pq2h6E9AHtW+38q3
+    6ywRkko7XBSYZ20ScCq3dAKH4CbVZfRUjwswjfNfbLkBDQRlOm4RAQgA1rcuuFre
+    PSmANPhVDWYaM5PIn4+ui4s7MiZKzlgHSzWR/ei2w0LnG9ueqFDtxrCJUgTGtJXj
+    +5JNIFiAVm+OgdlIPe/Oy3n5DrbWSVi5DGUXH5anhuBkeFy5XNHF6WykJp+165Rx
+    6Ls+MxTvrgiOzumuocczLMpEwm7g0w/ACEcQXF7Sohx3an5vXP3CNbYg7dgK+qOE
+    R7Edt9hhOMG4trRgAMbCQtcPC4tjHVYvh9UHGKzPTvgp1tgey1+r9q4RJxyNog4b
+    7L1nogPdAm8NACm31ggBwWLr3DXgJnUh2addtnyi6ipIIs8tVk3068rjWJjx3VDj
+    0fEK+bwou0JjtQARAQABiQE2BBgBCAAgFiEEMV4d3kexpPnFGHOGZdxtoGSfkCAF
+    AmU6bhECGwwACgkQZdxtoGSfkCBxBggAneL3ScFOSNZfRPtzx7TWAoYq8WObybyw
+    d3qWrcfQatq/f4qyEShjqWl4u81oHZ/8z8V+4im5XPUB8+fJt8qeZ0RNYDX+l5BN
+    B2Y13E0TXcm0uVM6nnrufLa0Yr4kSRj4FdGgmPoQnKxNZ7nOPaYDtw277qfkCXoS
+    iVDwhsgN0/pX3Du3szGPjqUg428HMETSK3Z1B18n/uyfXixg/NXa3yY3xJ6e4daI
+    1JWni8wICkEMvRMjkaKDyz7pMwd+YnK/vE54uV3Zm3+aa0+IHReoZA5f9jpT6anQ
+    mIkzz8NwjGeBBZbfMegvmRAylmavtmZrvyulJVxOBH5YyHjI3PFq/g==
+    =IHbt
+    -----END PGP PUBLIC KEY BLOCK-----  
