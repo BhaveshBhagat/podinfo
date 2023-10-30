@@ -8,4 +8,4 @@ spec:
     name: imgrepo
   policy:
     semver:
-      range: 6.4.x
+      range: 6.3.x
