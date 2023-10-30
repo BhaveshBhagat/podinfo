@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: podinfo
+  name: bbpod
 spec:
   minReadySeconds: 3
   revisionHistoryLimit: 5
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: podinfod
-        image: ghcr.io/stefanprodan/podinfo:6.4.1 # {"$imagepolicy": "flux-system:bbimgpolicy"}
+        image: ghcr.io/stefanprodan/podinfo:6.4.1
         imagePullPolicy: IfNotPresent
         ports:
         - name: http
