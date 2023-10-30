@@ -3,5 +3,8 @@ kind: Kustomization
 resources:
   - hpa.yaml
   - deployment.yaml
+  - imgrepo.yaml
+  - image_policy.yaml
+  - imgauto.yaml  
   - service.yaml
 
