@@ -19,7 +19,7 @@ spec:
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
       signingKey:
         secretRef:
-          name: pgp-public
+          name: gittoken
     push:
       branch: master
   update:
