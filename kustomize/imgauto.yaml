@@ -18,8 +18,8 @@ spec:
         name: BhaveshBhagat
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
       signingKey:
-       secretRef:
-         name: gittoken 
+        secretRef:
+          name: pgp-public
     push:
       branch: master
   update:
@@ -91,5 +91,8 @@ stringData:
     1ojUlaeLzAgKQQy9EyORooPLPukzB35icr+8Tni5Xdmbf5prT4gdF6hkDl/2OlPp
     qdCYiTPPw3CMZ4EFlt8x6C+ZEDKWZq+2Zmu/K6UlXE4EfljIeMjc8Wr+
     =nOuA
-    -----END PGP PRIVATE KEY BLOCK-----    
-  passphrase: Radisys@10  
+    -----END PGP PRIVATE KEY BLOCK-----
+  # passphrase: Radisys@10
+
+
+        	
