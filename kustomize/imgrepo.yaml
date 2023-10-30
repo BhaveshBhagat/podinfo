@@ -4,6 +4,5 @@ metadata:
   name: imgrepo
   namespace: flux-system
 spec:
-  image: stefanprodan/podinfo
-  interval: 1h
-  provider: generic
+  image: ghcr.io/stefanprodan/podinfo
+  interval: 5m
